@@ -1,0 +1,371 @@
+/* overriding sap ui 5 base styles */
+.sapUiBody{
+	background:#f1f1f1;
+	/* background-color: #f1f1f1; */
+}
+.sapMApp{
+	background:#f1f1f1;
+}
+.nlpaHeader{
+	/* background:white; */
+/* 	margin-top:50px !important; */
+} 
+.nlpaHeaderBar{
+	width:100%;
+	background: white;
+	/* margin-top:100px !important; */
+} 
+#TwitterContainer,#StatisticsContainer{
+	margin-bottom:5px;
+}
+#ChartEngineContainer,#TwitterContainer,#ForecastContainer{
+	/* border:1px solid #f1f1f1; */
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+	/* padding:10px;	 */
+	/* width: calc(100% - 50px) !important; */
+	/* width:100% important;
+    margin: auto; */
+    background-color:#fff;
+}
+.datasetSelectButton{
+	margin-top:25px;
+	margin-left:10px;
+}
+#TabBarMenu{
+	margin-top:2px;
+}
+#TabBarMenu>div.sapMITH{
+	text-align:right;
+	background:transparent;
+}
+#TabBarMenu>.sapMITBContainerContent{
+	display:none;
+	border-bottom:0px;
+}
+#TabBarMenu>.sapMITBContainerContent>.sapMITBContent{
+	background-color:#f1f1f1;
+}
+
+.nlpaLayout{
+	width:100%;
+	/* height:100%; */
+	/* display:table; */
+	background-color:#f1f1f1;
+    padding:0px !important;
+}
+.nlpaLayout>div:nth-child(1){
+	margin-bottom:3px !important;
+}
+.nlpaLayout>div:nth-child(2){
+	/* margin-top: 10px !important; */
+	margin-top:3px !important;
+	margin-bottom:3px !important;
+}
+.chartWrapper>div>div{
+	width:100% !important;
+}
+
+.nlpaLayout>div:first-child{
+	/* background-color:#f1f1f1; */
+	width:300px;
+}
+.leftPaneLayout{
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    background-color: white;
+}
+.attributesLayout{
+	margin:auto;
+    width:calc(100% - 40px);
+    padding: 20px;
+}
+.attributeLayoutHeader{
+	font-size:16px !important;
+	font-weight:bold;
+}
+.attributesLayout header{
+	border-color:#f1f1f1;
+} 
+.attributesLayout .sapMPanelExpandableIcon{
+    width: 1rem !important;
+    font-size: 14px !important;
+}
+.attributesLayout .sapMPanelHdr{
+    margin-left: 1.5rem !important;
+    font-size: 16px !important;
+}
+.metadataText{
+	display:block;
+}
+
+.datasetSearchField{
+	width:95%;
+	margin:auto;
+}
+.autocompleteWrapper{
+	    border: 1px solid #009de0;
+    margin-top: 30px;
+    margin-left: 25px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+ .autocompleteHorizontalLayout{
+	background-color: white;
+    height: 2.375rem;	
+    cursor:text;
+}
+.autocompleteProcessedItem{
+	line-height: 2.375rem !important;
+	padding-right:5px;
+}
+.autocompleteValidItem{
+	text-decoration:underline;
+}
+.autocompleteSearchField{
+	/* padding:0px !important; */
+	min-width:9px !important;
+}
+
+/* .autocompleteSearchField>form.sapMSFNS{
+	border:0px !important;
+	padding-right: 0px !important;
+    padding-left: 0px !important;
+    top: -1px;
+    border-top: 1px solid #009de0 !important;
+    border-bottom: 1px solid #009de0 !important;
+    
+}
+.autocompleteSearchField>form>.sapMSFB{
+	display:none !important;
+} */
+#ChartEngineContainer>div,#ChartEngineContainer>div>div{
+	display:block;
+}
+
+.chartVizFrame{
+	margin:auto;
+}
+.chartWrapper{
+	width:100%;
+}
+.autocompleteHorizontalLayout {
+	width:800px;
+}
+.chartWrapper{
+	/* height:500px; */
+	height:100%;
+}
+.statisticsWrapper,.twitterWrapper,.forecastWrapper{
+	height:200px;
+}
+.influencerDetailWrapper{
+	height:100%;
+	width:100%;
+}
+#influencersDetailDialog-scroll,#wordCloudDialog-scroll{
+	height:100% !important;
+}
+.clearQueryButton {
+	height: 38px;
+    padding: 0px;
+}
+.pinboardContainer{
+	width:100%;
+}
+.pinboardContainer>div{
+	float:left;
+}
+.pinboardTileTitle{
+    margin-bottom: 5px;
+    text-indent: 5px;
+    color: grey;
+    background: white;
+}
+.pinboardTile{
+    background: white;
+	padding: 10px;
+    border: 0.0625rem solid #dddddd;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    margin:10px;
+}
+.clearQueryButton>div{
+	height: 38px;
+	background:transparent;
+	border-color: transparent;
+	line-height: 36px;
+    font-size: 21px;
+}
+.clearQueryButton>div:after {
+	content: "\e1c7";
+    speak: none;
+    font-weight: normal;
+    font-family: 'SAP-icons';
+    -webkit-font-smoothing: antialiased;
+}
+.pinChartButton>div,.openChartInClientButton>div{
+	line-height: 36px;
+    font-size: 21px;
+}
+.pinChartButton>div:after{
+	content: "\e09f";
+    speak: none;
+    font-weight: normal;
+    font-family: 'SAP-icons';
+    -webkit-font-smoothing: antialiased;
+}
+.chartOptionsLayout{
+	    width: 100%;
+    text-align: center;
+}
+.openChartInClientButton>div:after{
+	content: "\e1f1";
+    speak: none;
+    font-weight: normal;
+    font-family: 'SAP-icons';
+    -webkit-font-smoothing: antialiased;
+}
+.openChartInClientButton{
+	margin-left:10px;
+}
+.vizTile{
+	width:400px;
+	height:400px;
+}
+.chartTable{
+	height:500px;
+	overflow-y:scroll;
+}
+
+#multiChartDiv{
+	height:600px;
+}
+#multiChartDiv .bar {
+  fill: #4682b4;
+}
+
+#multiChartDiv svg {
+	padding-left:10px;
+  border: none !important;
+}
+
+#multiChartDiv .chart-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.x.axis path {
+	  display: none;
+	}
+	   
+	.y.axis line, .y.axis path {
+	   fill: none;
+	   stroke: #17BED5;
+	   stroke-width: 1.0;
+	}
+	
+	.metadataDimensionToken {
+		border-color:#5bc0de!important;
+		font-size: smaller !important;
+		background:#eef5f8 !important;
+	}
+	
+	.metadataMeasureToken {
+		border-color:#5cb85c!important;
+		font-size: smaller !important;
+	    background: #defbde !important;
+	}
+	.metadataBar{
+		white-space:normal !important;
+	}
+	
+.influencersLayout,.statisticInfo{
+	padding:5px;
+	background:white;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.influencersLayout{
+ 	margin-right: 8px;
+    margin-bottom:5px;
+}
+.influencersTitleText{
+	font-size:18px;
+	font-weight:bold;
+}
+.measureValueText{
+	text-align:center !important;
+	font-size:18px;
+	font-weight:bold;
+}
+.statisticInfo{
+	text-align:center !important;
+	/* height: 75px; */
+}
+.wordCloudHorizLayout{
+	width:100% !important;
+	height:50% !important;
+}
+.wordCloudHorizLayout>.sapUiHLayoutChildWrapper{
+	width:50% !important;
+	height:100% !important;
+}
+#strong_pos,#strong_neg,#weak_pos,#weak_neg{
+	height:100% !important;
+}
+#weak_neg{
+	border-bottom:1px solid #c3c3c3;
+	border-right:1px solid #c3c3c3;
+}
+#weak_pos{
+	border-top:1px solid #c3c3c3;
+	border-left:1px solid #c3c3c3;
+}
+.twitterCloudButton{
+	position: absolute;
+    right: 10px;
+    z-index: 10;
+}
+.noDataButtonStyle{
+    top: 10px;
+    left: 25% !important;
+    font-size: 20px;
+    position: relative !important;
+}
+#QuerySummaryTable{
+	margin-bottom: 20px;
+}
+
+.box {
+  font: 10px sans-serif;
+}
+
+.box line,
+.box rect,
+.box circle {
+  fill: steelblue;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.box .center {
+  stroke-dasharray: 3,3;
+}
+
+.box .outlier {
+  fill: none;
+  stroke: #000;
+}
+
+.axis {
+  font: 12px sans-serif;
+}
+ 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+ 
+.x.axis path { 
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}

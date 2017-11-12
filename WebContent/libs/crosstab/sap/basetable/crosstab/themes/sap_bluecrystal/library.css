@@ -1,0 +1,810 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *
+ * (c) Copyright 2009-2012 SAP AG. All rights reserved
+ */
+/* Global CSS for 'base' theme */
+/* ---------------------------------------------------------------------------------------- */
+/* TMP during LESS convertion ---- to be deleted */
+/* may be required by SubstitutionRulesManager.css in inbox lib */
+/* ---------------------------------------------------------------------------------------- */
+/* Global CSS for 'sap_platinum' theme */
+/* ---------------------------------------------------------------------------------------- */
+/* This CSS shares it rules with all other CSS of this library */
+/* shared CSS */
+/*******************************************/
+/* Base styles                             */
+/*******************************************/
+
+[class|=crosstab] {
+  box-sizing:content-box;
+  text-align:left;
+}
+
+.crosstab-selection-outline {
+  z-index: 300;
+  display: none;
+  border: 3px dotted #7f7fff;
+  border-radius: 4px;
+  position: absolute;
+  pointer-events: none;
+}
+
+/*******************************************/
+/* Column resizing elemnts                 */
+/*******************************************/
+
+#crosstab-resizable-col-line {
+  position: absolute;
+  background-color: #00bcf2;
+  width: 1px;
+  visibility: visible;
+  display: inline;
+  z-index: 200;
+}
+
+.crosstab-resizable-col {
+  width: 4px;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 199;
+}
+
+.cell-span-wrapped .crosstab-resizable-col {
+  top: auto !important;
+  bottom: 0px;
+}
+
+.crosstab-resizable-col:hover {
+  cursor: col-resize;
+  background-color: #00bcf2;
+}
+
+.crosstab-resizable-col:active {
+  cursor: col-resize;
+  background-color: transparent;
+}
+
+.crosstab-resizable-col.keep-visible:active{
+  cursor: col-resize;
+  background-color: #00bcf2;
+}
+
+#crosstab-resizable-row-line {
+  position: absolute;
+  background-color: #00bcf2;
+  height: 1px;
+  visibility: visible;
+  display: inline;
+  z-index: 200;
+}
+
+.crosstab-resizable-row {
+  height: 4px;
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 200;
+}
+
+.crosstab-resizable-row:hover {
+  cursor: row-resize;
+  background-color: #00bcf2;
+}
+
+.crosstab-resizable-row:active {
+  cursor: row-resize;
+  background-color: transparent;
+}
+
+.crosstab-resizable-row.keep-visible:active{
+  cursor: row-resize;
+  background-color: #00bcf2;
+}
+
+/* Wider resizer divs for tablets */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .crosstab-resizable-col {
+    width: 10px;
+  }
+  .crosstab-resizable-row {
+    height: 10px;
+  }
+}
+
+.crosstab-word-wrap {
+  word-break: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap !important;
+}
+
+.crosstab-word-wrap-header {
+  position: absolute;
+  bottom: 2px;
+}
+
+/********************************************/
+/*  Sorting                                                */
+/********************************************/
+
+.crosstab-sorting-feedback{
+  position: absolute;
+  width: 17px;
+  height: calc(100% - 2px);
+  right: 0px;
+  top: 0px;
+  z-index: 99;
+  color: #666666;
+  padding: 2px 5px 0px 10px;
+  background-color: transparent;
+  line-height: 24px;
+  cursor: default;
+}
+
+.crosstab-cell-selected .crosstab-sorting-feedback {
+  color: #ffffff;
+}
+
+.crosstab-sorting-feedback-when-overlaps {
+  box-shadow: -3px 0px 7px #e6e7e8;
+  background-color: #ffffff;
+}
+
+.crosstab-cell-selected .crosstab-sorting-feedback-when-overlaps {
+  box-shadow: -3px 0px 7px #15A3CB;
+  background-color:  #00bcf2;
+}
+
+.crosstab-sorting-feedback-background{
+  background-color: #ffffff;
+}
+
+.crosstab-cell-selected .crosstab-sorting-feedback-background{
+  background-color: #00bcf2;
+}
+
+.icon-Crosstab-Measures-Sorting-Ascending:before {
+  content: "\e129";
+}
+
+.icon-Crosstab-Measures-Sorting-Descending:before {
+  content: "\e130";
+}
+
+.icon-Crosstab-Measures-Sorting-Unsorted:before {
+  content: "\e100";
+}
+
+.crosstab-cell-selected .crosstab-sorting-feedback {
+  color: #ffffff;
+}
+
+.sapUI5Crosstab{
+  position: absolute;
+  z-index: 100;
+}
+
+.crosstab-Layout {
+  border-color: #D8D8D8;
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 1px 0px 0px 1px;
+  font-size: 11px;
+  line-height: normal;
+  display:inline-block;
+  float:left;
+}
+
+.crosstab-Layout.borderBottomWidth {
+  border-bottom-width: 1px;
+}
+
+.crosstab-Layout.borderRightWidth {
+  border-right-width: 1px;
+}
+
+.crosstab-Layout.noBorder {
+  border-style: none;
+  border-width: 0 0 0 0px;
+}
+
+.crosstab-Layout-Column {
+  font-size: 11px;
+  line-height: 0px;
+}
+
+.crosstab-Layout-Column.leftArea {
+  border-right-color: #e6e7e8;
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+
+.crosstab-Layout-Column.noDataPoints {
+  border-right-color: #f2f1f0;
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+
+.crosstab-Cell {
+  border-left-color: transparent;
+  border-top-color: #e6e7e8;
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  position: relative;
+  display: table-cell;
+}
+
+.crosstab-RowAxisHeaderContent .crosstab-Cell {
+  border-color: #e6e7e8;
+  border-style: solid;
+  border-width: 1px 0 0 0px;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  position: relative;
+  padding-left: 1px;
+}
+
+.crosstab-RowAxisHeaderContent .crosstab-Cell-Top {
+  border-style: none;
+  border-width: 0 0 0 0px;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  position: relative;
+  padding-left: 1px;
+}
+
+.crosstab-GrandTotal .crosstab-Cell {
+  border-color: #e6e7e8;
+  border-style: solid;
+  border-width: 1px 0 0 0px;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  position: relative;
+}
+
+#rowAxisHeader-Container .crosstab-GrandTotal .crosstab-Cell {
+  padding-left: 1px;
+}
+
+.crosstab-DimensionCell {
+  color: #666;
+  border-color: #D8D8D8;
+  background-color: #f2f1f0;
+  border-style: solid;
+  overflow: hidden;
+  vertical-align: bottom;
+  white-space: nowrap;
+  position: relative;
+  font-weight: bold;
+  border: 0px;
+}
+
+.crosstab-rightAreaDimensionHeader {
+  background-color: #f2f1f0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+}
+
+
+.crosstab-CellContent {
+  overflow: hidden;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  vertical-align: middle;
+  padding: 0 8px 0 8px;
+  cursor: default;
+  line-height: 24px;
+  margin-top: 2px;
+  min-height: 29px;
+}
+
+.crosstab-Total {
+  overflow: hidden;
+  color: #000000;
+  font-family: Arial,Helvetica,sans-serif;
+  font-style: normal;
+  font-size: 11px !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  vertical-align: middle;
+  font-weight: bold !important;
+  text-align: right;
+  padding: 0 8px 0 8px;
+  cursor: default;
+  line-height: 24px;
+  margin-top: 2px;
+  min-height: 29px;
+}
+
+.crosstab-GrandTotal {
+  background-color: #fff;
+  z-index: 199;
+}
+
+.crosstab-GrandTotal .crosstab-row,
+.crosstab-GrandTotal .crosstab-DataCell-first,
+.crosstab-GrandTotal .crosstab-DataCell
+{
+  background-color: #fff;
+}
+
+.crosstab-ChildrenCell {
+  display: inline-block;
+}
+
+.crosstab-Layout .crosstab-BottomSection{
+  display:block;
+  overflow:hidden;
+}
+
+#Crosstab-MeasuresIconContainer {
+  padding: 12px 4px 0px 4px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #f0ab00;
+  display:inline-block;
+  vertical-align: top;
+}
+
+#MeasureNamesDimension span {
+  display:inline-block;
+  vertical-align: middle;
+  padding-left: 0px;
+  width: calc(100% - 30px);
+}
+
+.measures-icon-wrapped {
+  position: relative !important;
+  bottom: 17px !important;
+}
+
+.cell-span-wrapped {
+  position: relative !important;
+  height: auto !important;
+}
+
+.crosstab-measures-feeding-card .viz-controls-common-feeding-card-icon {
+  height: 16px;
+  width: 16px;
+  color: #f0ab00;
+}
+
+.icon-Crosstab-Measures-Rows:before {
+  content: "\e212";
+}
+.icon-Crosstab-Measures-Columns:before {
+  content: "\e213";
+}
+
+@font-face {
+  font-family: 'lumira-icons';
+  src: url('../../../../../../../../sap/viz/controls/aio/resources/common/assets/lumira-icons-1.0/lumira-icons.ttf'), url('../../../../../../../../sap/viz/controls/aio/resources/common/assets/lumira-icons-1.0/lumira-icons.eot');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'lumira-icons';
+  font-weight: normal;
+  font-style: normal;
+}
+
+.crosstab-cell-selected {
+  background-color: #00bcf2 !important;
+  border-top-color: #00bcf2 !important;
+  color: #ffffff !important;
+}
+
+/*******************************************/
+/* Top Row Styles                          */
+/*******************************************/
+.crosstab-Layout .crosstab-TopSection{
+  display:block;
+  overflow:hidden;
+}
+
+.crosstab-TopSection .crosstab-DimensionCell{
+  display:table-cell;
+}
+
+.crosstab-TopSection .crosstab-Layout-Column{
+  display:table;
+}
+
+.crosstab-TopSection .crosstab-LeftDimensionHeaders, .crosstab-TopSection .crosstab-ColumnHeaderContainer {
+  background-color: #f2f1f0;
+  border-width: 0 0 3px 0px;
+  border-bottom-color: #00bcf2;
+  border-style: solid;
+}
+
+/*******************************************/
+/* Left Dimension Header Area Styles       */
+/*******************************************/
+.crosstab-LeftDimensionHeaders{
+  display:inline-block;
+  float:left;
+}
+
+.crosstab-RowAxisContentContainer{
+  display:inline-block;
+  float:left;
+}
+
+.crosstab-LeftDimensionHeaders .crosstab-Layout-Column{
+  height:100%;
+}
+
+.crosstab-RowDimensionCell {
+  background-color: #f2f1f0;
+  padding-bottom: 0px;
+}
+
+.crosstab-LeftDimensionHeaders .crosstab-RowDimensionCell .crosstab-CellContent,
+.crosstab-ColumnHeaderContainer .crosstab-ColumnDimensionCell .crosstab-CellContent,
+.crosstab-ColumnHeaderContainer .crosstab-ColumnDimensionCell-first .crosstab-CellContent{
+  font-size: 11px;
+  color: #666;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+/*******************************************/
+/* Column Header Area Styles               */
+/*******************************************/
+.crosstab-ColumnHeaderContainer{
+  display: inline-block;
+  float:left;
+  vertical-align: top;
+}
+
+.crosstab-ColumnHeaderContainer-blueBarsRemoved {
+  border-bottom-color: transparent;
+}
+
+.crosstab-ColumnHeaderCell{
+  display:table-cell;
+  position: relative;
+}
+
+.crosstab-ColumnDimensionCell {
+  border-width: 0 0 0 1px;
+}
+
+.crosstab-TopSection .crosstab-ColumnHeader{
+  display: table-cell;
+}
+
+.crosstab-TopSection .crosstab-columnDimensionHeaderRow{
+  display: inline-block;
+}
+
+.crosstab-columnDimensionHeaderRow{
+  background-color: #F2F2F2;
+  border-style: none;
+  float:left;
+}
+
+.crosstab-columnDimensionHeaderRow .crosstab-RowDimensionCell{
+  border-width: 0px 0px 0px 1px;
+}
+
+.crosstab-TopSection .crosstab-Cell {
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  position: relative;
+  display: table-cell;
+  padding-left: 1px;
+}
+
+.crosstab-TopSection .crosstab-Cell-Top {
+  background-color: #ffffff;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  position: relative;
+  display: table-cell;
+  padding-left: 1px;
+}
+
+/*******************************************/
+/* Row Axis Header Area Styles             */
+/*******************************************/
+.crosstab-RowAxisheaderContainer{
+  display:inline-block;
+  float:left;
+  vertical-align:top;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: transparent;
+}
+
+.crosstab-RowAxisheaderContainer-noDataPoints{
+  display: inline-block;
+  float: left;
+  vertical-align: top;
+}
+
+.crosstab-RowAxisheaderContainer-blueBars {
+  border-right-color: #00bcf2;
+}
+
+.crosstab-RowAxisHeaderContent .crosstab-Cell, .crosstab-Cell-Top {
+  display: inline-block;
+}
+
+.crosstab-GrandTotal .crosstab-Cell {
+  display: inline-block;
+}
+
+.crosstab-RowAxisHeaderContent  {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.crosstab-dimensionHeaderCell {
+  line-height: 0px;
+}
+
+.crosstab-FloatingCell {
+  position:absolute;
+  left: 0px;
+  border-width: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 100;
+  padding: 1px 8px 0px 9px !important;
+}
+
+.crosstab-Cell-Under-Floating-Header {
+  opacity: 0;
+}
+
+/*******************************************/
+/* Data Cell Area Styles                   */
+/*******************************************/
+.crosstab-DataArea{
+  display: table-cell;
+}
+
+.crosstab-DataCell {
+  display: table-cell;
+  float:left;
+  overflow:auto;
+  border-top: 1px #f7f7f8;
+  border-left-style: solid;
+  border-left-color: #e6e7e8;
+  border-left-width: 1px;
+}
+
+.crosstab-DataCell-first {
+  display: table-cell;
+  float:left;
+  overflow:auto;
+  border-top: 1px #f7f7f8;
+  border-left-style: solid;
+  border-left-color: transparent;
+  border-left-width: 1px;
+}
+
+.crosstab-GrandTotal .crosstab-DataCell {
+  display: table-cell;
+  float:left;
+  overflow:auto;
+  border-top: 1px solid #e6e7e8;
+  border-left-style: solid;
+  border-left-color: #e6e7e8;
+  border-left-width: 1px;
+}
+
+.crosstab-GrandTotal .crosstab-DataCell-first {
+  display: table-cell;
+  float:left;
+  overflow:auto;
+  border-top: 1px solid #e6e7e8;
+  border-left-style: solid;
+  border-left-color: transparent;
+  border-left-width: 1px;
+}
+
+.crosstab-DataCell .crosstab-Total,
+.crosstab-DataCell-first .crosstab-Total {
+  text-overflow: clip;
+}
+
+.crosstab-DataArea .crosstab-CellContent{
+  text-align: right;
+  padding: 0 8px 0 8px;
+  text-overflow: clip;
+  line-height: 24px;
+  margin-top: 1px;
+}
+
+.crosstab-BottomSection .crosstab-row:nth-child(even) {
+  display:table-row;
+}
+
+.crosstab-BottomSection .crosstab-content-row-even {
+  background-color:#ffffff;
+}
+
+.crosstab-row:nth-child(odd) {
+  display:table-row;
+}
+
+.crosstab-content-row-odd {
+  background-color: #f7f7f8;
+}
+
+/*******************************************/
+/* Scrollbar Styles                   */
+/*******************************************/
+
+.crosstab-scroll .vertical-Scroll-Bar-Track-Piece:active ,
+.crosstab-scroll .horizontal-Scroll-Bar-Track-Piece:active {
+  background: #6e6e6e !important;
+}
+
+.crosstab-scroll .horizontal-Scroll-Bar-Track {
+    position: absolute;
+    border-radius: 2.5px;
+    height: 20px;
+  }
+
+.crosstab-scroll .vertical-Scroll-Bar-Track {
+    position: absolute;
+    border-radius: 2.5px;
+    width: 20px;
+}
+
+.crosstab-scroll .vertical-Scroll-Bar-Track-Piece {
+  background: #9d9c9c;
+  position: absolute !important;
+  border-radius: 2.5px;
+  top: 0px;
+  right: 5px;
+  width: 7px;
+  }
+
+.crosstab-scroll .horizontal-Scroll-Bar-Track-Piece {
+  background: #9d9c9c;
+  border-radius: 2.5px;
+  position: absolute !important;
+  left: 0px;
+  height: 7px;
+  bottom: 5px;
+}
+
+.crosstab-hideSection {
+  width: 0px !important;
+  height: 0px !important;
+  display : none !important;
+}
+
+.crosstab-loadingIndicator {
+  position: absolute;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("img/loading.gif");
+
+}
+
+.crosstab-loadingVisible {
+  display: block;
+  width: 24px;
+  height: 6px;
+}
+
+.crosstab-loadingHidden {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+.crosstab-DataArea-PositionAbsolute {
+  position: absolute;
+}
+
+/*******************************************/
+/* Tooltip                                 */
+/*******************************************/
+.crosstab-tooltip-container {
+  left: 0px;
+  top: 0px;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  z-index: 400;
+}
+
+.crosstab-tooltip {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: auto;
+  height: auto;
+  float: left;
+  visibility: visible;
+  line-height: normal;
+  padding: 0px;
+  white-space: nowrap;
+  z-index: 200 !important;
+}
+
+.crosstab-tooltip-background {
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 3px;
+  box-shadow: rgb(175, 175, 175) 1px 1px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 10px 15px 7px 15px;
+  background: rgb(255, 255, 255);
+  height: 25px !important;
+}
+
+.crosstab-tooltip-extension {
+  position: relative;
+  display: block;
+}
+
+table.crosstab-tooltip-matrix-layout {
+  border-collapse:collapse;
+  table-layout:fixed;
+  width:100%;
+}
+
+table.crosstab-tooltip-matrix-layout tbody {
+  width: 100%;
+  height: 100%;
+}
+
+table.crosstab-tooltip-matrix-layout td {
+  overflow: hidden;
+}
+
+table.crosstab-tooltip-matrix-layout td button {
+  height: 20px !important;
+  padding: 1px 4px 1px 4px !important;
+}
+
+table.crosstab-tooltip-matrix-layout td button img {
+  position: relative;
+  top: 0px;
+  left: 2px;
+  margin-right: 2px;
+}
+
+button.crosstab-tooltip-disabled {
+  background: transparent !important;
+  color: #bfbfbf !important;
+  filter: none !important;
+  cursor: default !important;
+}
+
+span.crosstab-tooltip-icon-caption {
+  margin-top: -4px !important;
+}

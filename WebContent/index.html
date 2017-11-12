@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.ui.commons, sap.m, sap.suite.ui.commons"
+				data-sap-ui-theme="sap_bluecrystal" 
+				data-sap-ui-preload="sync"
+				data-sap-ui-rtl="false">
+		</script>
+
+		<script type="text/javascript" src="libs/d3.js"></script>
+		<script type="text/javascript" src="libs/d3.layout.cloud.js"></script>
+		<script type="text/javascript" src="libs/rgbcolor.js"></script>
+		<script type="text/javascript" src="libs/underscore-min.js"></script>
+		<script type="text/javascript" src="libs/canvg.js"></script>
+        <script type="text/javascript" src="libs/sap.viz.info.js"></script>
+        <script type="text/javascript" src="libs/rgbcolor_static.js"></script>
+        <script type="text/javascript" src="libs/sap.viz.vizservices.js"></script>
+        <script type="text/javascript" src="libs/sap.viz.vizframe.js"></script>
+        <!-- <script type="text/javascript" src="libs/library.js"></script> -->
+        <script type="text/javascript" src="libs/CrosstabViewer.js"></script>
+        
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="com/sap/bi/nlpa/css/styles.css">
+
+		 <script>
+		 
+		 function loadApplication(appSettings){
+			 
+			 jQuery.sap.registerModulePath("com.sap.bi.nlpa", "./com/sap/bi/nlpa/");    //our own libs
+			 jQuery.sap.registerResourcePath("","https://sapui5.hana.ondemand.com/resources/");
+			
+			 //load our core app lib and the global css (if cachebuster was configured, then this would be cachebuster safe!) 
+            jQuery.sap.require("com.sap.bi.nlpa.app.NLPAApp");
+			 
+			 var oCore = sap.ui.getCore();
+			 oCore.attachInit(function() {
+				 NLPAApp.init(appSettings);
+		         //NLPAApp.includeStyleSheet('com/sap/bi/nlpa/css/SearchToBI.css'); 
+			 	
+			 });
+		 };
+		 
+		 var appSettings = {
+					logonToken : "oData.logonToken",
+					webServiceURL : "sRestWebServiceURL",
+					pvl : "sPVL",
+					productLocale : "sProductLocale"
+				};
+			
+			loadApplication(appSettings);
+			
+		 
+        </script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+	
+		<div id="content"><div id = "pageLoader" style="padding-top: 21%; padding-left: 50%;" ><img src="com/sap/bi/nlpa/images/ajaxSpinner.gif" /></div></div>
+		<div id="hiddenDiv" style="display:none" >
+		  <canvas id="hiddenCanvas"></canvas>
+		</div>
+	</body>
+</html>
